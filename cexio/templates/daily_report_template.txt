@@ -1,0 +1,15 @@
+--Daily Report for the past 24 hours--
+
+USD balance: {{usd_balance}}
+BTC balance: {{btc_balance}}
+ETH balance: {{eth_balance}}
+
+{% for order in last_days_orders %}
+# {{forloop.counter}}:
+Order ID: {{order.order_id}},
+Pair: {{order.pair}}
+Order Type: {{order.order_type}}
+Price: {{order.price}}
+Amount: {{order.amount}}
+Total: {{order.total}}
+{% endfor %}
