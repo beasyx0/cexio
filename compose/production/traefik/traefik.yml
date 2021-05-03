@@ -15,14 +15,11 @@ entryPoints:
     # https
     address: ":443"
 
-  flower:
-    address: ":5555"
-
 certificatesResolvers:
   letsencrypt:
     # https://docs.traefik.io/master/https/acme/#lets-encrypt
     acme:
-      email: "cexio-admin@example.com"
+      email: "b_easyx@protonmail.com"
       storage: /etc/traefik/acme/acme.json
       # https://docs.traefik.io/master/https/acme/#httpchallenge
       httpChallenge:
@@ -37,15 +34,6 @@ http:
       middlewares:
         - csrf
       service: django
-      tls:
-        # https://docs.traefik.io/master/routing/routers/#certresolver
-        certResolver: letsencrypt
-
-    flower-secure-router:
-      rule: "Host(`my-app.live`)"
-      entryPoints:
-        - flower
-      service: flower
       tls:
         # https://docs.traefik.io/master/routing/routers/#certresolver
         certResolver: letsencrypt
