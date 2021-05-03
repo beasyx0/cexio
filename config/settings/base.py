@@ -206,8 +206,10 @@ EMAIL_TIMEOUT = 5
 # ------------------------------------------------------------------------------
 # Django Admin URL.
 ADMIN_URL = "admin/"
+
+BOT_ADMIN_EMAIL = env("BOT_ADMIN_EMAIL", default="cexio-admin@example.com")
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = [("""cexio admin""", "cexio-admin@example.com")]
+ADMINS = [("""cexio admin""", BOT_ADMIN_EMAIL)]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 
