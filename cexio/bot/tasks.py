@@ -102,7 +102,7 @@ def send_daily_report():
         'date': last_day.date()
         }
 
-    subject = 'Daily report'
+    subject = ' Daily report'
 
     daily_report = render_to_string(report_template, data)
 
@@ -148,6 +148,7 @@ def cancel_and_delete_open_orders():
                 cuttoff_time = now_aware - timedelta(minutes=bot_auto_cancel_time)
                 order_timestamp = int(order['time']) / 1000  # needs to be int times 1000 for seconds
                 order_datetime = datetime.fromtimestamp(order_timestamp)  # datetime object for comparison
+                timezone = pytz.timezone('America/New_York')
                 order_datetime_aware = timezone.localize(order_datetime)  # order time aware
 
                 if order_datetime_aware < cuttoff_time:  # is it older than auto_cancel_order_period? 
