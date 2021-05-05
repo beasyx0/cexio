@@ -153,7 +153,7 @@ def cancel_and_delete_open_orders():
 
                 if order_datetime_aware < cuttoff_time:  # is it older than auto_cancel_order_period? 
                     # too old, cancel it
-                    cancelled = api.cancel_order(order['id'])  # returns True or False
+                    cancelled = api.cancel_order(int(order['id']))  # returns True or False
                     if cancelled:
                         local_open_order_ids.append(order['id'])
 

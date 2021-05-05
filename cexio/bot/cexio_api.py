@@ -114,6 +114,7 @@ class Api:
         return self.api_call('open_orders', None, market)
 
     def cancel_order(self, order_id):
+        '''pass int'''
         return self.api_call('cancel_order', {'id': order_id})
 
     def buy_limit_order(self, amount, price, market):
